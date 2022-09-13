@@ -5,6 +5,7 @@
 访问地址：
 - [GitHub Pages](https://fvtt-cn.github.io/)
 - [Gitee 国内镜像](https://fvtt-cn.gitee.io/)
+- [临时镜像](https://fvtt-cn.kagangtuya.top/)
 
 ## 如何为本站点编写内容
 果园招募地址：http://www.goddessfantasy.net/bbs/index.php?topic=123973.0
