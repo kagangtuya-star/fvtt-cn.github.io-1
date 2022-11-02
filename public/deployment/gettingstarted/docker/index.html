@@ -29,7 +29,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://fvtt-cn.kagangtuya.top/deployment/gettingstarted/docker/" /><meta property="article:section" content="deployment" />
 
-<meta property="article:modified_time" content="2021-07-09T21:23:27+08:00" /><meta property="og:site_name" content="FoundryVTT 中文社区" />
+<meta property="article:modified_time" content="2022-11-02T17:19:54+08:00" /><meta property="og:site_name" content="FoundryVTT 中文社区" />
 
 <meta itemprop="name" content="Docker 部署 FoundryVTT 教程">
 <meta itemprop="description" content="Foundry VTT 目前拥有若干个来自不同用户实现的 Dockerfile，这些实现中，较为推荐 felddy/foundryvtt 的镜像，而使用该教程中提供的 Linux 自动部署脚本，可以简化操作，自动部署，无需学习 Docker 的使用和管理。
@@ -37,7 +37,7 @@
 在全新购买的云服务器上使用自动脚本进行部署，最少只需要输入 Foundry VTT 站点上的用户名和密码即可完成，同时脚本也包含了后续更新、维护的方法。
 使用 Docker 的优点 无需关心系统环境：只要是主流发行版的 Linux，甚至于 Windows 服务器，只要安装了 Docker，即和其他用户的部署行为一致，难以因系统环境问题出错 直接使用 Docker 的后台管理：Docker 自己会监控容器内运行的进程状态、网站可访问状态，如果意外情况导致 FVTT 崩溃或无法访问，可以不需要使用 pm2 等进程监控工具即可自动重启、还原 目前主流的 FVTT 的 Docker 镜像包含内置的自动获取下载地址和授权的脚本，可以简化部署流程 &hellip; 使用 Docker 的缺点 如果使用卷挂载，直接访问 FVTT 的数据文件会变得略困难（可以通过 Docker 启动其他容器简化文件访问，以下自动部署脚本已使用 Web 文件管理器解决该问题） 目前主流的 FVTT 的 Docker 镜像升级时需要重建容器，而不能通过 FVTT 内置更新（以下自动部署脚本可以大幅简化更新流程） &hellip; 使用教程 自动部署脚本安装流程 首先，假设已经登入了 Linux 服务器，并且能够获得 root 权限
 如果还没有 Linux 服务器，可以参见云服务器指南，了解如何购买/基本操作 你无需了解什么是 root 权限，云服务通常会提供；如果确认无法获取，可咨询客服 下载脚本">
-<meta itemprop="dateModified" content="2021-07-09T21:23:27+08:00" />
+<meta itemprop="dateModified" content="2022-11-02T17:19:54+08:00" />
 <meta itemprop="wordCount" content="531">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Docker 部署 FoundryVTT 教程"/>
@@ -131,7 +131,7 @@
   aria-label="站内搜索…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7a7b298f45ec2b55203076c241c59bf8a42218c953c2bcfad867ce10db7bfb706ca0be3caee898fc3c10026f6438216815a63c507defa01e58141bdd05e59350.json"
+  data-offline-search-index-json-src="/offline-search-index.2c84e7ac1c2995e66ebaba3818cb932800287812edfa6aad0bfd5999de7fbb9e2a7f2855daa431992b7b25bd2b0c530f7d6105244fc3c25b04cbf29142605a88.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -162,7 +162,7 @@
   aria-label="站内搜索…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7a7b298f45ec2b55203076c241c59bf8a42218c953c2bcfad867ce10db7bfb706ca0be3caee898fc3c10026f6438216815a63c507defa01e58141bdd05e59350.json"
+  data-offline-search-index-json-src="/offline-search-index.2c84e7ac1c2995e66ebaba3818cb932800287812edfa6aad0bfd5999de7fbb9e2a7f2855daa431992b7b25bd2b0c530f7d6105244fc3c25b04cbf29142605a88.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -802,7 +802,7 @@
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最后修改 2021/07/09: <a  href="https://github.com/fvtt-cn/fvtt-cn.github.io/commit/5be689f0c9690b448b171867a95d2cbf2b4fe707">Update docker.md (5be689f)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最后修改 2022/11/02: <a  href="https://github.com/fvtt-cn/fvtt-cn.github.io/commit/e95d6f3f3da13a8cae6aa02ffe2d66ebe4802953">修改docker链接 (e95d6f3)</a>
 </div>
 </div>
 
