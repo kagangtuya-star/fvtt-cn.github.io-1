@@ -33,6 +33,11 @@ Foundry VTT 目前拥有若干个来自不同用户实现的 Dockerfile，这些
 2. 下载脚本
     ```bash
     wget -O fvtt.sh https://fvtt-cn.coding.net/p/FoundryDeploy/d/FoundryDeploy/git/raw/master/fvtt.sh && sudo chmod +x fvtt.sh
+    由于coding仓库拉取限制，改为以下两个方式
+    海外服务器请用
+    wget -O fvtt.sh https://raw.githubusercontent.com/fvtt-cn/FoundryDeploy/master/fvtt.sh && sudo chmod +x fvtt.sh
+    大陆服务器请用
+    wget -O fvtt.sh https://raw.fastgit.org/fvtt-cn/FoundryDeploy/master/fvtt.sh && sudo chmod +x fvtt.sh
     ```
 3. 运行脚本，进行安装
     ```bash
@@ -94,11 +99,16 @@ Docker 容器为了保证运行时文件尽量不受改动，避免在不同时�
 为了解决这个问题，自动部署脚本包含了如何升级容器内 FVTT 版本的方法，这个方法会保证数据文件夹内的文件不受改动，可以放心升级，*但 FVTT 升级后再启动世界往往会对世界进行更新*。
 
 **该方法不仅可以升级版本，还可以方便地用脚本重装同版本或者回退旧版本**。
-
+44
 #### 更新脚本
 更新脚本和下载脚本命令相同，粘贴执行以下命令：
 ```bash
-wget -O fvtt.sh https://fvtt-cn.coding.net/p/FoundryDeploy/d/FoundryDeploy/git/raw/master/fvtt.sh && sudo chmod +x fvtt.sh
+wget -O fvtt.sh https://fvtt-cn.coding.net/p/FoundryDeploy/d/FoundryDeploy/git/raw/master/fvtt.sh && sudo chmod +x fvtt.sh~~
+由于coding仓库拉取限制，改为以下两个方式
+海外服务器请用
+wget -O fvtt.sh https://raw.githubusercontent.com/fvtt-cn/FoundryDeploy/master/fvtt.sh && sudo chmod +x fvtt.sh
+大陆服务器请用
+wget -O fvtt.sh https://raw.fastgit.org/fvtt-cn/FoundryDeploy/master/fvtt.sh && sudo chmod +x fvtt.sh
 ```
 
 #### 升级流程
@@ -121,6 +131,7 @@ wget -O fvtt.sh https://fvtt-cn.coding.net/p/FoundryDeploy/d/FoundryDeploy/git/r
       - 出现该提示的原因一般是之前使用了旧版脚本进行部署，而使用了更新脚本（`v1.4.0+`）进行 FVTT 更新，需要完全清空 Caddyfile
       - 清除 Caddyfile 不会影响之前安装的 FVTT 的世界、合集、模组等文件
     
+
 {{% alert title="注意" color="warning" %}}
 为了方便升级和二次部署，脚本运行后默认会存储输入的参数信息。如果不需要存储配置，避免如果服务器被黑之后账号信息可能的泄露，请在脚本运行完毕后删除 `fvtt-config` 文件，执行：
 ```

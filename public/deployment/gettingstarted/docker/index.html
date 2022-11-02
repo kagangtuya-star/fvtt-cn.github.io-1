@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.102.3" />
+<meta name="generator" content="Hugo 0.105.0">
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -38,7 +38,7 @@
 使用 Docker 的优点 无需关心系统环境：只要是主流发行版的 Linux，甚至于 Windows 服务器，只要安装了 Docker，即和其他用户的部署行为一致，难以因系统环境问题出错 直接使用 Docker 的后台管理：Docker 自己会监控容器内运行的进程状态、网站可访问状态，如果意外情况导致 FVTT 崩溃或无法访问，可以不需要使用 pm2 等进程监控工具即可自动重启、还原 目前主流的 FVTT 的 Docker 镜像包含内置的自动获取下载地址和授权的脚本，可以简化部署流程 &hellip; 使用 Docker 的缺点 如果使用卷挂载，直接访问 FVTT 的数据文件会变得略困难（可以通过 Docker 启动其他容器简化文件访问，以下自动部署脚本已使用 Web 文件管理器解决该问题） 目前主流的 FVTT 的 Docker 镜像升级时需要重建容器，而不能通过 FVTT 内置更新（以下自动部署脚本可以大幅简化更新流程） &hellip; 使用教程 自动部署脚本安装流程 首先，假设已经登入了 Linux 服务器，并且能够获得 root 权限
 如果还没有 Linux 服务器，可以参见云服务器指南，了解如何购买/基本操作 你无需了解什么是 root 权限，云服务通常会提供；如果确认无法获取，可咨询客服 下载脚本">
 <meta itemprop="dateModified" content="2021-07-09T21:23:27+08:00" />
-<meta itemprop="wordCount" content="488">
+<meta itemprop="wordCount" content="531">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Docker 部署 FoundryVTT 教程"/>
 <meta name="twitter:description" content="Foundry VTT 目前拥有若干个来自不同用户实现的 Dockerfile，这些实现中，较为推荐 felddy/foundryvtt 的镜像，而使用该教程中提供的 Linux 自动部署脚本，可以简化操作，自动部署，无需学习 Docker 的使用和管理。
@@ -51,8 +51,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.8c1f9286090a155fff3e6f9638c4c2ad87d5f4af320ef25af2bf2b8d40033f83.css" as="style">
-<link href="/scss/main.min.8c1f9286090a155fff3e6f9638c4c2ad87d5f4af320ef25af2bf2b8d40033f83.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.scss" as="style">
+<link href="/scss/main.scss" rel="stylesheet" integrity="">
 
 
 <script
@@ -131,7 +131,7 @@
   aria-label="站内搜索…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.448f6ef188f20b52fe9ca4292bf6005211738b3570c4fdb1f4588275121e231dc471aa585855ecd69d7bb9510c73f2e80f5002d4f40f1dd52fc3eb0f41bd1900.json"
+  data-offline-search-index-json-src="/offline-search-index.7a7b298f45ec2b55203076c241c59bf8a42218c953c2bcfad867ce10db7bfb706ca0be3caee898fc3c10026f6438216815a63c507defa01e58141bdd05e59350.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -162,7 +162,7 @@
   aria-label="站内搜索…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.448f6ef188f20b52fe9ca4292bf6005211738b3570c4fdb1f4588275121e231dc471aa585855ecd69d7bb9510c73f2e80f5002d4f40f1dd52fc3eb0f41bd1900.json"
+  data-offline-search-index-json-src="/offline-search-index.7a7b298f45ec2b55203076c241c59bf8a42218c953c2bcfad867ce10db7bfb706ca0be3caee898fc3c10026f6438216815a63c507defa01e58141bdd05e59350.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -445,6 +445,11 @@
 <li>
 <p>下载脚本</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -O fvtt.sh https://fvtt-cn.coding.net/p/FoundryDeploy/d/FoundryDeploy/git/raw/master/fvtt.sh <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> sudo chmod +x fvtt.sh
+</span></span><span style="display:flex;"><span>由于coding仓库拉取限制，改为以下两个方式
+</span></span><span style="display:flex;"><span>海外服务器请用
+</span></span><span style="display:flex;"><span>wget -O fvtt.sh https://raw.githubusercontent.com/fvtt-cn/FoundryDeploy/master/fvtt.sh <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> sudo chmod +x fvtt.sh
+</span></span><span style="display:flex;"><span>大陆服务器请用
+</span></span><span style="display:flex;"><span>wget -O fvtt.sh https://raw.fastgit.org/fvtt-cn/FoundryDeploy/master/fvtt.sh <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> sudo chmod +x fvtt.sh
 </span></span></code></pre></div></li>
 <li>
 <p>运行脚本，进行安装</p>
@@ -528,10 +533,16 @@
 <h3 id="fvtt-升级更新流程">FVTT 升级/更新流程</h3>
 <p>Docker 容器为了保证运行时文件尽量不受改动，避免在不同时间启动容器产生了行为上的差异，使用了 <code>--noUpdate</code> 参数启动容器内的 FVTT，关闭了 Foundry VTT 自动更新的功能，使得用户无法使用 FVTT 内置的检查更新来升级。</p>
 <p>为了解决这个问题，自动部署脚本包含了如何升级容器内 FVTT 版本的方法，这个方法会保证数据文件夹内的文件不受改动，可以放心升级，<em>但 FVTT 升级后再启动世界往往会对世界进行更新</em>。</p>
-<p><strong>该方法不仅可以升级版本，还可以方便地用脚本重装同版本或者回退旧版本</strong>。</p>
+<p><strong>该方法不仅可以升级版本，还可以方便地用脚本重装同版本或者回退旧版本</strong>。
+44</p>
 <h4 id="更新脚本">更新脚本</h4>
 <p>更新脚本和下载脚本命令相同，粘贴执行以下命令：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -O fvtt.sh https://fvtt-cn.coding.net/p/FoundryDeploy/d/FoundryDeploy/git/raw/master/fvtt.sh <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> sudo chmod +x fvtt.sh
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -O fvtt.sh https://fvtt-cn.coding.net/p/FoundryDeploy/d/FoundryDeploy/git/raw/master/fvtt.sh <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> sudo chmod +x fvtt.sh~~
+</span></span><span style="display:flex;"><span>由于coding仓库拉取限制，改为以下两个方式
+</span></span><span style="display:flex;"><span>海外服务器请用
+</span></span><span style="display:flex;"><span>wget -O fvtt.sh https://raw.githubusercontent.com/fvtt-cn/FoundryDeploy/master/fvtt.sh <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> sudo chmod +x fvtt.sh
+</span></span><span style="display:flex;"><span>大陆服务器请用
+</span></span><span style="display:flex;"><span>wget -O fvtt.sh https://raw.fastgit.org/fvtt-cn/FoundryDeploy/master/fvtt.sh <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> sudo chmod +x fvtt.sh
 </span></span></code></pre></div><h4 id="升级流程">升级流程</h4>
 <ol>
 <li>

@@ -528,6 +528,11 @@ ProxyPassReverse / &#34;&lt;em&gt;&lt;u&gt;https://yourdomain.com:30000/&lt;/u&g
 &lt;li&gt;
 &lt;p&gt;下载脚本&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wget -O fvtt.sh https://fvtt-cn.coding.net/p/FoundryDeploy/d/FoundryDeploy/git/raw/master/fvtt.sh &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo chmod +x fvtt.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;由于coding仓库拉取限制，改为以下两个方式
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;海外服务器请用
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wget -O fvtt.sh https://raw.githubusercontent.com/fvtt-cn/FoundryDeploy/master/fvtt.sh &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo chmod +x fvtt.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;大陆服务器请用
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wget -O fvtt.sh https://raw.fastgit.org/fvtt-cn/FoundryDeploy/master/fvtt.sh &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo chmod +x fvtt.sh
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;运行脚本，进行安装&lt;/p&gt;
@@ -611,10 +616,16 @@ ProxyPassReverse / &#34;&lt;em&gt;&lt;u&gt;https://yourdomain.com:30000/&lt;/u&g
 &lt;h3 id=&#34;fvtt-升级更新流程&#34;&gt;FVTT 升级/更新流程&lt;/h3&gt;
 &lt;p&gt;Docker 容器为了保证运行时文件尽量不受改动，避免在不同时间启动容器产生了行为上的差异，使用了 &lt;code&gt;--noUpdate&lt;/code&gt; 参数启动容器内的 FVTT，关闭了 Foundry VTT 自动更新的功能，使得用户无法使用 FVTT 内置的检查更新来升级。&lt;/p&gt;
 &lt;p&gt;为了解决这个问题，自动部署脚本包含了如何升级容器内 FVTT 版本的方法，这个方法会保证数据文件夹内的文件不受改动，可以放心升级，&lt;em&gt;但 FVTT 升级后再启动世界往往会对世界进行更新&lt;/em&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;该方法不仅可以升级版本，还可以方便地用脚本重装同版本或者回退旧版本&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;该方法不仅可以升级版本，还可以方便地用脚本重装同版本或者回退旧版本&lt;/strong&gt;。
+44&lt;/p&gt;
 &lt;h4 id=&#34;更新脚本&#34;&gt;更新脚本&lt;/h4&gt;
 &lt;p&gt;更新脚本和下载脚本命令相同，粘贴执行以下命令：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wget -O fvtt.sh https://fvtt-cn.coding.net/p/FoundryDeploy/d/FoundryDeploy/git/raw/master/fvtt.sh &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo chmod +x fvtt.sh
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wget -O fvtt.sh https://fvtt-cn.coding.net/p/FoundryDeploy/d/FoundryDeploy/git/raw/master/fvtt.sh &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo chmod +x fvtt.sh~~
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;由于coding仓库拉取限制，改为以下两个方式
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;海外服务器请用
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wget -O fvtt.sh https://raw.githubusercontent.com/fvtt-cn/FoundryDeploy/master/fvtt.sh &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo chmod +x fvtt.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;大陆服务器请用
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wget -O fvtt.sh https://raw.fastgit.org/fvtt-cn/FoundryDeploy/master/fvtt.sh &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo chmod +x fvtt.sh
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;升级流程&#34;&gt;升级流程&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -1110,7 +1121,7 @@ CDN 主要解决 FVTT 服务器可能会遇到的带宽不足、延迟高等网�
 &lt;/ol&gt;
 &lt;blockquote&gt;
 &lt;p&gt;如果开启了 HTTPS 访问，等待云服务下发好证书后，即可通过加速域名（例 &lt;code&gt;fvtt.cdn.com&lt;/code&gt;）访问
-&lt;br/&gt; 
+&lt;br/&gt;
 如果没有使用 HTTPS，直接浏览器里打开加速域名即可&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;如果以上配置完毕后，仍然无法正常连接加速域名，请检查域名 CNAME 解析是否正确。&lt;/p&gt;
